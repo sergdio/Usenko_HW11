@@ -21,7 +21,7 @@ public class UserLoginProgram {
         }
     }
 
-    private static void validateInput(String username, String password) throws CustomException {
+    public static void validateInput(String username, String password) throws CustomException {
         if (username == null || username.isEmpty() || password == null || password.isEmpty()) {
             throw new CustomException("Ім'я користувача або пароль не можуть бути порожніми або NULL");
         }
