@@ -1,3 +1,5 @@
+package com.herokuapp.uitests;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -8,15 +10,15 @@ import org.testng.annotations.Test;
 public class AlertJSTests extends BaseTest {
     @Test
     public void alertTestJS() {
-        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        BaseTest.driver.get("https://the-internet.herokuapp.com/javascript_alerts");
 
         //WebElement alertButton = driver.findElement(By.xpath("//button[contains(text(),'JS Alert')]"));
 
-        WebElement alertButton = driver.findElement(By.xpath("//button[contains(text(),'JS Confirm')]"));
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        WebElement alertButton = BaseTest.driver.findElement(By.xpath("//button[contains(text(),'JS Confirm')]"));
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) BaseTest.driver;
         javascriptExecutor.executeScript("return arguments[0].click()", alertButton);
 
-        Alert alert = driver.switchTo().alert();
+        Alert alert = BaseTest.driver.switchTo().alert();
         alert.accept();
 
         String result = getResult();
@@ -24,7 +26,7 @@ public class AlertJSTests extends BaseTest {
     }
 
     private String getResult() {
-        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) BaseTest.driver;
         return javascriptExecutor.executeScript("return document.getElementById('result').textContent").toString();
     }
 }

@@ -1,3 +1,4 @@
+package com.herokuapp.uitests;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -11,15 +12,15 @@ import org.testng.annotations.Test;
         @Test
         public void testJavaScriptConfirmAlert() {
             // Знаходимо елемент кнопки і викликаємо алерт
-            WebElement confirmButton = driver.findElement(By.xpath("//button[text()='Click for JS Confirm']"));
+            WebElement confirmButton = BaseTest.driver.findElement(By.xpath("//button[text()='Click for JS Confirm']"));
             confirmButton.click();
 
             // Використання JavascriptExecutor для виклику алерту
-            JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) BaseTest.driver;
             jsExecutor.executeScript("confirm('Are you sure?');");
 
             // Отримання тексту алерту
-            Alert alert = driver.switchTo().alert();
+            Alert alert = BaseTest.driver.switchTo().alert();
             String alertText = alert.getText();
 
             // Виведення інформації про алерт в консоль
@@ -33,7 +34,7 @@ import org.testng.annotations.Test;
         }
 
         private String getResult() {
-            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) driver;
+            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) BaseTest.driver;
             return javascriptExecutor.executeScript("return document.getElementById('result').textContent").toString();
         }
     }

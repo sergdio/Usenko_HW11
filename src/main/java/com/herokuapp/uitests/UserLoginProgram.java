@@ -1,3 +1,7 @@
+package com.herokuapp.uitests;
+
+import com.herokuapp.uitests.CustomException;
+
 import java.util.Scanner;
 
 public class UserLoginProgram {
@@ -41,8 +45,3 @@ public class UserLoginProgram {
     }
 }
 
-class CustomException extends Exception {
-    public CustomException(String message) {
-        super(message);
-    }
-}

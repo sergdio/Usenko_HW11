@@ -5,7 +5,7 @@
 <suite name="SimpleTest suite name">
     <test name="SimpleTest test name" >
         <classes>
-            <class name="com.herokuapp.ScrollDemo"/>
+            <class name="com.herokuapp.uitests./>
         </classes>
     </test>
 </suite>
