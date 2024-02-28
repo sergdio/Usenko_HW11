@@ -5,7 +5,12 @@
 <suite name="SimpleTest suite name">
     <test name="SimpleTest test name" >
         <classes>
-            <class name="com.herokuapp.uitests./>
+            <class name="com.herokuapp.uitests.AlertJSTests"/>
+        </classes>
+    </test>
+    <test name="SimpleTest test name" >
+        <classes>
+            <class name="com.herokuapp.uitests.AlertJSTests1"/>
         </classes>
     </test>
 </suite>
